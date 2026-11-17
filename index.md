@@ -40,7 +40,7 @@ features:
 
 ### Software Interface
 
-![](https://pvtr2.pyvideotrans.com/1785390634543_1.png)
+![](https://pvtr2.pyvideotrans.com/1794901244186_image.png)
 
 ![](https://pvtr2.pyvideotrans.com/1785395316051_image.png)
 

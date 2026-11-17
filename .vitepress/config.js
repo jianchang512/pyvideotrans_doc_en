@@ -72,6 +72,9 @@ export default defineConfig({
   themeConfig: {
 	logo:"https://pvtr2.pyvideotrans.com/images/logo.png",
 	siteTitle:"pyVideoTrans",
+	editLink: {
+      pattern: 'https://github.com/jianchang512/pyvideotrans_doc_en/edit/main/:path'
+    },
 	outlineTitle: 'Title', // Outline Title
 	outline: 'deep', // Outline display level: number: show specific level | [number, number]: show level range | 'deep': show all | false: do not show
     nav: [

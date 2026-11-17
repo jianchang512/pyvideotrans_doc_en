@@ -59,6 +59,7 @@ Works completely offline without an internet connection. Models are downloaded a
 | [Elevenlabs.io Speech Recognition](/elevenlabsrecogn) | Free accounts have strict rate limits and are barely usable |
 | [Deepgram.com](/deepgram) | Requires registering for an API Key |
 | [Gemini AI](/gemini-recognition) | Strong at recognizing low-resource/minority languages; requires proxy/VPN access in restricted regions |
+| deepseek | v4.19+,中文（zh）、粤语（yue）、英语（en）、日语（ja）、韩语（ko）、德语（de）、法语（fr）、西班牙语（es）、葡萄牙语（pt）、意大利语（it）、俄语（ru）、阿拉伯语（ar）、印地语（hi）、印尼语（id）、越南语（vi）、泰语（th）、土耳其语（tr）、马来语（ms）、菲律宾语（fil）、波兰语（pl）、匈牙利语（hu） |
 | [302.AI](/302ai) | Apply on 302.ai |
 | [OpenAI Speech Recognition API](/openairecogn) | Excellent quality, requires an OpenAI API key (SK key) |
 

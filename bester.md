@@ -33,6 +33,7 @@ This article recommends the best configuration options for each of the four proc
 | Free (Alternative) | Firered Chinese (Built-in) | Xiaohongshu Chinese & Dialects | Good Chinese results |
 | Free (Alternative) | Huggingface_ASR (Built-in) | zai-org/GLM-ASR-Nano-2512 | Zhipu AI model, good Chinese results |
 | Paid (Recommended) | Doubao Speech Recognition LLM Turbo | — | Good Chinese results |
+| Paid (Recommended) | DeepSeek | v4.19+ | Good Chinese results |
 | Paid (Recommended) | Xiaomi mimo-v2.5-asr | — | Good Chinese results |
 | Paid (Alternative) | Ali Bailian ASR | — | Chinese-optimized |
 
@@ -92,7 +93,7 @@ This article recommends the best configuration options for each of the four proc
 |---------|------|------|
 | Free | Edge-TTS | Microsoft free interface, natural results, supports all languages |
 | Local | Qwen-TTS, F5-TTS, OmniVoice, Confucius| Built-in, supports cloning |
-| Paid | Doubao Voice 2.0 / Qwen-TTS (bailian) / Xiaomi / Minimaxi / OpenAI-TTS | High-quality commercial APIs |
+| Paid | Doubao Voice 2.0 / DeepSeek / Qwen-TTS (bailian) / Xiaomi / Minimaxi / OpenAI-TTS | High-quality commercial APIs |
 | Clone | OmniVoice / Confucius / Qwen-TTS / GPT-SOVITS / CosyVoice / F5-TTS / Index-TTS / ChatterBox / ZipVoice / FireRed3-TTS | Use the original video's voice |
 
 > [Click to view detailed information and usage instructions for dubbing channels](/peiyinqudao)

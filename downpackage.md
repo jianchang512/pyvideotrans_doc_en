@@ -18,25 +18,25 @@ If this project helps you, please consider a small donation to support ongoing d
 :::
 
 
-### v4.18 Full Package (2.7G)
+### v4.19 Full Package (2.7G)
 
-- HuggingFace: https://huggingface.co/mortimerme/repocollect/resolve/main/win-pyvideotrans-v4.18.7z?download=true
+- HuggingFace: https://huggingface.co/mortimerme/repocollect/resolve/main/win-pyvideotrans-v4.19.7z?download=true
 
-### v4.18 Patch (400MB)
+### v4.19 Patch (400MB)
 
 > The patch cannot be used standalone — only for overlaying the existing full package. If the app crashes after patching, download the full package. If extracting the patch causes errors, download the full package.
 
-- HuggingFace: https://huggingface.co/mortimerme/repocollect/resolve/main/win-PatchUpdate-v4.18.7z?download=true
+- HuggingFace: https://huggingface.co/mortimerme/repocollect/resolve/main/win-PatchUpdate-v4.19.7z?download=true
 
 
 
 
-::: details Previous versions (v4.17 / v4.03)
+::: details Previous versions (v4.18 / v4.03)
 
 > If the new version has bugs, try the previous version.
 
-**v4.17 Full Package (2.7G)**
-- HuggingFace: https://huggingface.co/mortimerme/repocollect/resolve/main/win-pyvideotrans-v4.17-1028.7z?download=true
+**v4.18 Full Package (2.7G)**
+- HuggingFace: https://huggingface.co/mortimerme/repocollect/resolve/main/win-pyvideotrans-v4.18.7z?download=true
 
 **v4.14 Full Package (2.7G)**
 - HuggingFace: https://huggingface.co/mortimerme/repocollect/resolve/main/win-pyvideotrans-v4.14.7z?download=true
@@ -61,42 +61,46 @@ If this project helps you, please consider a small donation to support ongoing d
 ---
 
 
-## ChangeLog
+## v4.19 ChangeLog
 
-- feat: ask before start the TTS channel may not support the target language
-- fix(align): write the silent placeholder of a failed line at 48 kHz stereo
-- fix(dubbing): apply the volume setting in subtitle dubbing
-- fix(tts): convert Doubao 2.0 audio to 48 kHz stereo like other channels 
-- fix(tts): write Doubao 2.0's mono PCM to both channels 
-- fix(translator): stop a line ending in an ellipsis from joining the next
-- test(tts): expect the mono wav that the Doubao 2.0 channel now saves
-- fix(translator): strip multi-line `<think>` blocks before reading the translation
-- fix(align): in video slow-down, end the last slot where the video ends 
-- fix(dubbing): import subtitles without [speaker] tags in multi-role dubbing again
-- fix(ui): take dropped files from their URLs and list their names
-- fix(prepare): escape the speaker name when removing its [Name] tag 
-- fix(ui): convert an imported target-language .ass file to SRT
-- fix(params): stop adding deleted bundled reference audios back at every start
-- fix(srt): import and dub .ass files saved as GBK or UTF-16
-- fix(ui): save Multi-Speaker dubbing once, in the chosen folder
-- fix(dubbing): don't overwrite a same-named file with mp3/m4a output or one-request Edge-TTS
-- fix(dubbing): don't reuse cached clone dubbing from another video 
-- fix(tts): save Qwen3-TTS lines re-dubbed with a preset voice
-- fix(tts): apply peak normalization and the silence settings when re-dubbing with built-in channels
-- fix(ui): use the channels' own params keys in the OpenRouter, DeepSeek and MiniMax windows 
-- fix(recogn): list the whisper.cpp and Whisper.NET models again
-- fix(onlyone): start the dubbing proofreading panel from the main window's silence and sync choices
-- fix(ui): select the saved TTS model in the OpenRouter window
-- fix(tts): use the Index-TTS and VoxCPM versions chosen in the settings window again
-- fix(tts): apply the speech rate correctly in Piper and the GPT-SoVITS api.py request
-- fix(srt): import, dub and translate .srt and .txt files saved as GBK
-- fix(translator): reuse the translation cache when "Send SRT" is on
-- fix should_recogn2 when is_audio_trans
-- Optimize: allow add shibie.wav to target output as stt wav
-- Optimize dubbing peak normalize
-- STT proivder add audio.cpp
-
-
+- Supports using DeepSeek for speech recognition and text dubbing. 
+- faster-whisper/Audio.cpp supports enabling AMD/Intel graphics card acceleration through Vulkan. 
+- The translation channel `OpenAI ChatGPT` supports the responses API. If the API address ends with `/responses`, it will automatically use `responses` to send data
+* fix(dubbing): save a one-subtitle .srt dubbed with Edge-TTS, and keep its start time, auto speed-up and volume by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1274
+* fix(tts): dub subtitle lines that contain & or < with Azure TTS by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1276
+* fix(translator): keep apostrophes, quotes and & in Google translations by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1275
+* fix(tts): give Doubao 2.0 and Ali Bailian the ids 18 and 19 on dev, so the TTS list runs the chosen channel by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1278
+* fix(translator): send the Reasoning Effort chosen for the VolcEngine LLM channel by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1277
+* fix(tts): give Doubao 2.0 and Ali Bailian the ids 18 and 19 on main by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1280
+* fix(srt): keep the Chinese lines of GBK subtitles in the Batch Subtitle Format Converter by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1279
+* feat: add WorldRouter subtitle translation provider by @xueyuanhuang in https://github.com/jianchang512/pyvideotrans/pull/1281
+* feat(translator): add Standard Compute translation channel by @henrikdukefoss in https://github.com/jianchang512/pyvideotrans/pull/1282
+* fix(srt): read .srt and .txt subtitles saved as UTF-16 or UTF-32 with a BOM by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1283
+* fix(vas): burn subtitles into a video without an audio track in Merge V/A/Srt by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1284
+* fix(vas): don't pad the chosen .wav file itself in Merge V/A/Srt by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1285
+* fix(srt): draw the bottom language of bilingual hard subtitles in the font chosen for it by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1286
+* fix(ui): keep each line's voice after a line is deleted in Edit Subtitles & Assign Voice Roles by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1287
+* fix(recogn): keep a decimal in one cue on the second pass by @GPT-AGI in https://github.com/jianchang512/pyvideotrans/pull/1288
+* fix(ui): keep the countdown of the dubbing proofreading panel running when there are more than 200 dubbed lines by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1292
+* feat(translator): add UberLLM translation channel by @PSA-Team-source in https://github.com/jianchang512/pyvideotrans/pull/1291
+* fix(ui): cut one clip per line of an .ass file in Trim Video by Subtitles by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1293
+* fix(ui): create the output folder shown in a tool window when it doesn't exist by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1294
+* fix(ui): save next to each file with Save to SourceDir and Save to Original by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1295
+* fix(ui): keep hand edits when using Replace in the subtitle proofreading panels by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1296
+* fix(ui): read .vtt times without hours in Trim Video by Subtitles by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1297
+* fix(vas): show Execution Complete in Merge V/A/Srt only once the video is saved by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1298
+* fix(ui): don't change the working folder in Merge Video & Audio and Batch Add Watermarks by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1299
+* fix(ui): put the watermark at the chosen position in Batch Add Watermarks by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1300
+* fix(ui): show the progress of Batch Add Watermarks from 0 to 100% by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1301
+* fix(ui): open the recordings folder in Real-time Speech-to-Text when output/ is missing by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1302
+* fix(ui): show the settings of Translation V/A again after using STT-Translation by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1303
+* fix(tts): use the saved Audio.cpp model when no model is passed by @tanishqbaweja in https://github.com/jianchang512/pyvideotrans/pull/1304
+* add language zh_TW by @lwhuang in https://github.com/jianchang512/pyvideotrans/pull/1306
+* feat: add end-to-end Vulkan GPU acceleration for ASR, HY-MT2 & TTS by @fangfufu in https://github.com/jianchang512/pyvideotrans/pull/1305
+* feat(gpu): fall back to CUDA for non-Vulkan models by @fangfufu in https://github.com/jianchang512/pyvideotrans/pull/1309
+* perf(audio): pass CPU core count to audiocpp_cli --threads by @fangfufu in https://github.com/jianchang512/pyvideotrans/pull/1308
+* feat(translator): add Requesty translation channel by @Thibaultjaigu in https://github.com/jianchang512/pyvideotrans/pull/1311
+* feat(translator): add TrustedRouter translation channel by @jperla in https://github.com/jianchang512/pyvideotrans/pull/1312
 
 
 

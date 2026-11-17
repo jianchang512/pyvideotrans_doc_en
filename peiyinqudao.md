@@ -117,6 +117,7 @@ nverguo.wav#The text content corresponding to the audio
 | [Elevenlabs.io](/elevenlabstts) | High-end AI voice generation | ⭐⭐⭐ |
 | [302.AI](/302ai) | API aggregation platform | ⭐⭐ |
 | [Minimaxi](/minimaxi) | MiniMax TTS (requires paid balance) | ⭐⭐ |
+| deepseek | v4.19+,普通话（zh）、粤语（yue）、英语（en）、日语（ja）、韩语（ko）、马来语（ms）、阿拉伯语（ar）、印尼语（id）、泰语（th）、越南语（vi） | ⭐⭐ |
 | [Xiaomi TTS](/mitts) | Xiaomi AI Open Platform | ⭐⭐ |
 | [X.AI TTS](/xaitts) | x.ai platform | ⭐⭐ |
 

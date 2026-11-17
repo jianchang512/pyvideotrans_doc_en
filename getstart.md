@@ -5,7 +5,9 @@ description: Complete user guide for pyVideoTrans Video Translator & Dubber
 
 # Comprehensive Guide - pyVideoTrans
 
-> This documentation applies to version `v4.18`
+> This documentation applies to version `v4.19`
+
+![](https://pvtr2.pyvideotrans.com/1794901244186_image.png)
 
 **Core Features: Video Translation / Speech-To-Text / Text-to-Speech / Translation Srt**
 
@@ -105,7 +107,7 @@ Windows hides file extensions by default, making it hard to tell apart video, au
 
 ## 3. Interface Overview
 
-![](https://pvtr2.pyvideotrans.com/1786768032490_image.png)
+![](https://pvtr2.pyvideotrans.com/1794901244186_image.png)
 
 From top to bottom, the main window is structured into these rows:
 
@@ -311,6 +313,7 @@ When **`SecondarySTT`** is checked, the software re-transcribes the freshly gene
 | [Audio.cpp(Local)](/audiocpp) | audio.cpp backend; supports switching between 10+ different TTS models |
 | `F5-TTS (Local)` | Supports Chinese, English, French, German, Italian, Japanese, Korean, Vietnamese, etc., with voice cloning |
 | [fish.audio](/fishaudioapi) | Online dubbing service; a good alternative to Elevenlabs.io, requires a fish.audio membership |
+| deepseek |v4.19+ Online dubbing service |
 | `OmniVoice (Local)` | Supports all built-in languages, supports voice cloning |
 | `Confucius (Local)` | Supports 14 languages including Chinese and English, supports voice cloning |
 | `ChatterBox (Local)` | Multilingual support (Chinese, English, etc.); strong European language performance, supports voice cloning |
@@ -363,11 +366,11 @@ Open `Menu -> Tools/Options -> Advanced Options -> Subtitle Dubbing`:
 
 ### Step 6: Start Execution
 
-![](https://pvtr2.pyvideotrans.com/1786768301751_image.png)
+![](https://pvtr2.pyvideotrans.com/1794902695354_image.png)
 
 - **`Import Speech Language SRT`**: If you already have the original SRT subtitles and don't want to re-run STT, click this button to import them. Only valid in Single-Video Mode.
 - **`Import target language SRT`**: If you already have translated target-language SRT subtitles and don't want to re-translate, click this button to import them. Only valid in Single-Video Mode.
-- **`Enable CUDA?`**: If you have an NVIDIA GPU with CUDA 12.8 and cuDNN 9 configured, check this to accelerate speech recognition several times over.
+- **`Enable Hardware Acceleration`**: After selecting this checkbox, the `List of Available Hardware Accelerators` will be displayed. If you have a NVIDIA graphics card, you can select hardware acceleration and CUDA, which will significantly speed up the speech recognition stage. From **v4.19**, some channels such as `faster-whipser/audio.cpp/whipser_cpp` allow you to select `vulkan` from the list of hardware accelerators to accelerate with AMD/Intel graphics cards.
 - **`Start Execution`**: Click to begin processing. The bottom progress bar displays real-time updates. Click it to open the output folder. When finished, the translated video is automatically saved to the output folder.
 
 ![](https://pvtr2.pyvideotrans.com/1786699282500_image.png)
@@ -605,9 +608,12 @@ This is normal. Different languages require different amounts of time to speak t
 2. Change the video encoder setting from 264 to 265.
 3. Disable `Slow Video`.
 
-### Q: How do I enable GPU acceleration?
+### Q: How to use hardware acceleration
 
-Verify your system has compatible NVIDIA drivers, CUDA 12.8, and cuDNN 9.11 installed, then check **Enable CUDA?** on the main window. AMD graphics cards do not support CUDA acceleration.
+If you have an NVIDIA graphics card, you can select "Enable Hardware Acceleration" and use CUDA for accelerated operation. Since version 4.19, hardware acceleration has started to support the use of AMD/Intel graphics cards based on Vulkan.
+It can be enabled by selecting 'Enable Hardware Acceleration' + 'auto/vulkan'. However, it should be noted that currently only the 'faster-whisper' channel and the 'Audio.cpp' channel support 'vulkan' hardware acceleration
+
+When using the `faster-whisper` channel, if you select `Enable Hardware Acceleration` + `Vulkan`, the whisper_cpp+ggml model will be automatically used to take advantage of hardware acceleration
 
 ### Q: What are the conditions for lossless video export?
 
